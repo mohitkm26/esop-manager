@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-manrope: 'Manrope', sans-serif;
+  --font-dm-mono: 'DM Mono', monospace;
+  --font-syne: 'Syne', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body { background: #0a0c10; color: #e8eaf0; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2e3548; border-radius: 3px; }
+
+input[type=date]::-webkit-calendar-picker-indicator { filter: invert(0.5); cursor: pointer; }
+
+@layer components {
+  .card { @apply bg-surface border border-border rounded-2xl p-6; }
+  .card-sm { @apply bg-surface border border-border rounded-xl p-4; }
+  .btn { @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm transition-all duration-150 cursor-pointer border-0; }
+  .btn-primary { @apply bg-blue text-white hover:brightness-110 hover:-translate-y-px; }
+  .btn-secondary { @apply bg-surface2 text-white border border-border2 hover:bg-border; }
+  .btn-success { @apply bg-green text-bg hover:brightness-110 hover:-translate-y-px; }
+  .btn-danger { @apply bg-red text-white hover:brightness-110; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .input { @apply w-full bg-bg border border-border2 rounded-xl text-white px-3.5 py-2.5 text-sm outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition-colors; }
+  .label { @apply block text-[10px] text-muted font-mono tracking-widest uppercase mb-1.5; }
+  .badge { @apply inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono; }
+  .badge-blue { @apply bg-blue/15 text-blue; }
+  .badge-green { @apply bg-green/15 text-green; }
+  .badge-red { @apply bg-red/15 text-red; }
+  .badge-amber { @apply bg-amber/15 text-amber; }
+  .badge-purple { @apply bg-purple/15 text-purple; }
+  .stat-value { @apply font-display font-bold text-3xl leading-none; }
+  .stat-label { @apply text-[10px] text-muted font-mono tracking-widest uppercase mb-2; }
+  .page-title { @apply font-display font-extrabold text-2xl tracking-tight; }
+  .section-title { @apply font-display font-bold text-base; }
+  .table-wrap { @apply overflow-x-auto rounded-xl border border-border; }
+  .th { @apply px-3.5 py-2.5 text-left text-[10px] text-muted font-mono tracking-widest uppercase whitespace-nowrap; }
+  .td { @apply px-3.5 py-3 text-sm border-t border-border; }
+  .td-mono { @apply font-mono text-xs; }
+  .progress-bar { @apply h-1.5 bg-surface2 rounded-full overflow-hidden; }
+  .progress-fill { @apply h-full rounded-full bg-gradient-to-r from-blue to-green transition-all duration-500; }
+}
